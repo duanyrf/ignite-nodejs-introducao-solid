@@ -1,0 +1,95 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "UserX API Documentation",
+    "description": "This is an API for challenge 02",
+    "version": "1.0.0",
+    "contact": {
+      "email": "eu@duany.dev"
+    }
+  },
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Create a user",
+        "description": "Create a new user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "email": "johndoe@example.com",
+                  "name": "John Doe"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "User"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Email already taken. Please choose another one"
+          }
+        }
+      }
+    },
+    "patch": {
+      "tags": ["User"],
+      "summary": "Create a user",
+      "description": "Create a new user",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "email": "johndoe@example.com",
+                "name": "John Doe"
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "201": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "User"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Email already taken. Please choose another one"
+        }
+      }
+    }
+  }
+}
